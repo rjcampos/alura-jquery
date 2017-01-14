@@ -7,6 +7,8 @@ $(function(){
 	inicializaContadores();
 	inicializaCronometro();
 	$("#botao-reiniciar").click(reiniciaJogo);
+	//desabilitando o botão ao carregar a página
+	$("#botao-reiniciar").toggleClass("botao-desativado");
 });
 
 function atualizaTamanhoFrase(){
@@ -27,8 +29,6 @@ function inicializaContadores(){
 function inicializaCronometro(){
 	var tempoRestante = tempoInicial
 	campo.one("focus", function(){
-		//desabilitando o botão de reiniciar enquanto o jogo não termina
-		$("#botao-reiniciar").toggleClass("botao-desativado");
 		var cronometroId = setInterval(function(){
 			tempoRestante--;
 			$("#tempo-restante").text(tempoRestante);
@@ -50,5 +50,16 @@ function reiniciaJogo(){
 	$("#contador-caracteres").text("0");
 	$("#tempo-restante").text(tempoInicial);
 	campo.toggleClass("campo-desativado");
+	//desabilitando o botão após ele ser clicado
+	$("#botao-reiniciar").toggleClass("botao-desativado");
 	inicializaCronometro();
+}
+
+function setButtonView(tempo){
+	if(tempo > 0){
+		$("#botao-reiniciar").addClass("botao-desativado");
+	}
+	else{
+		$("#botao-reiniciar").removeClass("botao-desativado");
+	}
 }
