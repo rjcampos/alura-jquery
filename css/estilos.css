@@ -8,6 +8,14 @@
 	text-align: left;
 }
 
+.icones{
+	vertical-align: middle;
+}
+
 .campo-desativado{
 	background-color: lightgray;
+}
+
+.botao-desativado{
+	display: none;
 }

@@ -28,7 +28,7 @@ function inicializaCronometro(){
 	var tempoRestante = tempoInicial
 	campo.one("focus", function(){
 		//desabilitando o botão de reiniciar enquanto o jogo não termina
-		$("#botao-reiniciar").attr("disabled", true);
+		$("#botao-reiniciar").toggleClass("botao-desativado");
 		var cronometroId = setInterval(function(){
 			tempoRestante--;
 			$("#tempo-restante").text(tempoRestante);
@@ -37,6 +37,7 @@ function inicializaCronometro(){
 				$(".campo-digitacao").attr("disabled", true);
 				$("#botao-reiniciar").attr("disabled", false);
 				campo.toggleClass("campo-desativado");
+				$("#botao-reiniciar").toggleClass("botao-desativado");
 			}
 		},1000);
 	});

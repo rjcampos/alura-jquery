@@ -17,9 +17,15 @@
 	    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-	    <ul class="informacoes">
-	    	<li><span id="numero-palavras">19</span> palavras</li>
-	    	<li><span id="tempo-restante">5</span> segundos</li>
+	    <ul class="informacoes center">
+	    	<li>
+	    		<i class="small material-icons icones">description</i>
+	    		<span id="numero-palavras">19</span> palavras
+	    	</li>
+	    	<li>
+	    		<i class="small material-icons icones">query_builder</i>
+	    		<span id="tempo-restante">5</span> segundos
+	    	</li>
 	    </ul>
 
 	    <textarea class="campo-digitacao" rows="8" cols="40"></textarea>
@@ -28,7 +34,9 @@
 			<li><span id="contador-palavras">0</span> palavras</li>
 		</ul>
 
-		<button id="botao-reiniciar">Reiniciar jogo</button>
+		<a class="btn-floating btn-large waves-effect waves-light red" id="botao-reiniciar">
+    		<i class="material-icons">restore</i>
+		</a>
 	</div>
 
     <script type="text/javascript" src="js/jquery.js"></script>
