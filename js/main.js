@@ -7,7 +7,6 @@ $(function(){
 	inicializaContadores();
 	inicializaCronometro();
 	$("#botao-reiniciar").click(reiniciaJogo);
-	$("#botao-reiniciar").attr("disabled", true);
 });
 
 function atualizaTamanhoFrase(){
@@ -28,6 +27,8 @@ function inicializaContadores(){
 function inicializaCronometro(){
 	var tempoRestante = tempoInicial
 	campo.one("focus", function(){
+		//desabilitando o botão de reiniciar enquanto o jogo não termina
+		$("#botao-reiniciar").attr("disabled", true);
 		var cronometroId = setInterval(function(){
 			tempoRestante--;
 			$("#tempo-restante").text(tempoRestante);
@@ -35,6 +36,7 @@ function inicializaCronometro(){
 				clearInterval(cronometroId);
 				$(".campo-digitacao").attr("disabled", true);
 				$("#botao-reiniciar").attr("disabled", false);
+				campo.toggleClass("campo-desativado");
 			}
 		},1000);
 	});
@@ -46,6 +48,6 @@ function reiniciaJogo(){
 	$("#contador-palavras").text("0");
 	$("#contador-caracteres").text("0");
 	$("#tempo-restante").text(tempoInicial);
+	campo.toggleClass("campo-desativado");
 	inicializaCronometro();
-	$("#botao-reiniciar").attr("disabled", true);
 }
