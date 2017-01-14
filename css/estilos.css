@@ -19,3 +19,11 @@
 .botao-desativado{
 	display: none;
 }
+
+.texto-certo{
+	border: 3px solid green;
+}
+
+.texto-errado{
+	border: 3px solid red;
+}
