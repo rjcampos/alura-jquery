@@ -6,6 +6,16 @@ function inserePlacar(){
 	var linha = novaLinha(usuario, numPalavras);
 	linha.find(".botao-remover").click(removeLinha);
 	placar.append(linha);
+
+	$(".placar").slideDown(600);
+	scrollPlacar();
+}
+
+function scrollPlacar(){
+	var posicaoPlacar = $(".placar").offset().top;
+	$("body").animate({
+		scrollTop: posicaoPlacar + "px"
+	}, 1000);
 }
 
 function novaLinha(usuario, numPalavras){
