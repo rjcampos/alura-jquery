@@ -10,6 +10,7 @@ $(function(){
 	$("#botao-reiniciar").click(reiniciaJogo);
 	//desabilitando o botão ao carregar a página
 	$("#botao-reiniciar").toggleClass("botao-desativado");
+	atualizaPlacar();
 });
 
 function atualizaTamanhoFrase(){

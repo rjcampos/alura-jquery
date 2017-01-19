@@ -1,3 +1,5 @@
+$("#botao-sync").click(sincronizaPlacar);
+
 function inserePlacar(){
 	var placar = $(".placar").find("tbody");
 	var usuario = "Raimundo";
@@ -49,4 +51,35 @@ $("#botao-placar").click(mostraPlacar);
 
 function mostraPlacar(){
 	$(".placar").stop().slideToggle(600);
+}
+
+function sincronizaPlacar(){
+	var placar = [];
+	var linhas = $("tbody>tr");
+	linhas.each(function(){
+		var nome = $(this).find("td:nth-child(1)").text();
+		var pontos = $(this).find("td:nth-child(2)").text();
+
+		var score = {
+			usuario: nome,
+			pontos: pontos
+		};
+		placar.push(score);
+	});
+	var data = {
+		placar: placar
+	};
+	$.post("http://localhost:3000/placar", data, function(){
+		console.log("Placar atualizado com sucesso!");
+	});
+}
+
+function atualizaPlacar(){
+	$.get("http://localhost:3000/placar", function(data){
+		$(data).each(function(){
+			var linha = novaLinha(this.usuario, this.pontos);
+			linha.find(".botao-remover").click(removeLinha);
+			$("tbody").append(linha);
+		});
+	});
 }
