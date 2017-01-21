@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/libs/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="css/libs/google-fonts.css">
+    <link rel="stylesheet" type="text/css" href="css/libs/selectize.default.css">
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
     <title>Alura Typer</title>
 </head>
@@ -56,6 +57,15 @@
 			</a>
 			<input type="number" min="0" id="frase-id">
 
+			<div class="select-usuarios">
+				<select id="usuarios">
+					<option value="Douglas">Douglas</option>
+					<option value="Flavio">Flavio</option>
+					<option value="Nico">Nico</option>
+					<option value="Joao">Joao</option>
+				</select>
+			</div>
+
 			<a class="btn-floating btn-large waves-effect waves-light yellow" id="botao-sync">
 	    		<i class="material-icons">swap_vert</i>
 			</a>
@@ -78,6 +88,7 @@
 	</div>
 
     <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/selectize.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/placar.js"></script>
     <script type="text/javascript" src="js/frase.js"></script>

@@ -2,7 +2,7 @@ $("#botao-sync").click(sincronizaPlacar);
 
 function inserePlacar(){
 	var placar = $(".placar").find("tbody");
-	var usuario = "Raimundo";
+	var usuario = $("#usuarios").val();
 	var numPalavras = $("#contador-palavras").text();
 
 	var linha = novaLinha(usuario, numPalavras);

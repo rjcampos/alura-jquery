@@ -11,6 +11,10 @@ $(function(){
 	//desabilitando o botão ao carregar a página
 	$("#botao-reiniciar").toggleClass("botao-desativado");
 	atualizaPlacar();
+	$("#usuarios").selectize({
+		create: true,
+		sortField: 'text'
+	});
 });
 
 function atualizaTamanhoFrase(){
